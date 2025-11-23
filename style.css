@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #1c1e21;
+  transition: all 0.3s;
+}
+
+body.dark {
+  background: #18191a;
+  color: #e4e6ea;
+}
+
+/* Auth Screen */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 400px;
+  text-align: center;
+}
+
+.auth-box h1 {
+  margin-bottom: 30px;
+  font-size: 42px;
+  color: #1877f2;
+}
+
+input, button, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover { opacity: 0.9; }
+
+.link { color: #1877f2; cursor: pointer; text-decoration: underline; }
+
+.hidden { display: none; }
+
+/* Main App */
+header {
+  background: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+body.dark header { background: #242526; }
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1877f2;
+}
+
+.user-info button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background: #e4e6ea;
+  color: #1c1e21;
+}
+
+body.dark .user-info button { background: #3a3b3c; color: white; }
+
+.controls {
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  margin: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body.dark .controls { background: #242526; }
+
+.create-post {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.dark .create-post { background: #242526; }
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.post-actions input { flex: 1; }
+
+#postsFeed {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post {
+  background: white;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+body.dark .post { background: #242526; }
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #65676b;
+}
+
+.post-text { margin: 10px 0; line-height: 1.5; }
+
+.post img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.post-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reactions button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.like-count {
+  font-size: 14px;
+  color: #65676b;
+}
+
+.delete-btn {
+  background: #e4e6ea;
+  color: #d62929;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+  .controls { flex-direction: column; }
+  .post-actions { flex-direction: column; }
+  .auth-box { width: 90%; padding: 20px; }
+}

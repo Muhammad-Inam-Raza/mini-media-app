@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MiniGram - Social App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Login / Signup Screen -->
+  <div id="authScreen" class="auth-container">
+    <div class="auth-box">
+      <h1>MiniGram</h1>
+      <div id="authForms">
+        <div id="loginForm">
+          <h2>Login</h2>
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input type="password" id="loginPass" placeholder="Password" required />
+          <button onclick="login()">Login</button>
+          <p>Don't have an account? <span onclick="showSignup()" class="link">Sign up</span></p>
+        </div>
+
+        <div id="signupForm" class="hidden">
+          <h2>Sign Up</h2>
+          <input type="text" id="signupName" placeholder="Full Name" required />
+          <input type="email" id="signupEmail" placeholder="Email" required />
+          <input type="password" id="signupPass" placeholder="Password" required />
+          <button onclick="signup()">Create Account</button>
+          <p>Already have an account? <span onclick="showLogin()" class="link">Login</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App (Hidden until login) -->
+  <div id="app" class="hidden">
+    <!-- Header -->
+    <header>
+      <div class="logo">MiniGram</div>
+      <div class="user-info">
+        <span>Welcome, <strong id="userName">User</strong></span>
+        <button id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search posts..." oninput="searchPosts()" />
+      <select id="sortSelect" onchange="sortPosts()">
+        <option value="latest">Latest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="mostLiked">Most Liked</option>
+      </select>
+    </div>
+
+    <!-- Create Post -->
+    <div class="create-post">
+      <textarea id="postText" placeholder="What's on your mind?"></textarea>
+      <div class="post-actions">
+        <input type="url" id="imageUrl" placeholder="Image URL (optional)" />
+        <button onclick="addPost()">Post</button>
+      </div>
+    </div>
+
+    <!-- Posts Feed -->
+    <div id="postsFeed"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
